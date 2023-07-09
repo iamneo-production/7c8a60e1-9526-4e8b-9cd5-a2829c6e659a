@@ -9,5 +9,3 @@ desc telecom;
 select circle,count(*) from Telecom group by circle;
 
 select product from telecom order by zone;
-
-select * from telecom;
