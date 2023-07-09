@@ -1,7 +1,5 @@
-select PRODUCT,COUNT(*) FROM TELECOM
-GROUP BY PRODUCT;
-
-select ZONE,COUNT(ZONE) FROM TELECOM
-GROUP BY ZONE;
-
 select count(*) from TELECOM;
+
+select product,count(product) from Telecom group by product;
+
+select CUSTOMERID from telecom;
