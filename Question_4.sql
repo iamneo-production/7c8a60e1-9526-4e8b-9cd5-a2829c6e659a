@@ -1,0 +1,1 @@
+select count(CUSTOMERID),PRODUCT from TELECOM group by PRODUCT;

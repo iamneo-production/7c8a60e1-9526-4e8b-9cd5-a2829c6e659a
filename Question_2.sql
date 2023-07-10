@@ -1,0 +1,1 @@
+select CUSTOMERID,"Customer Name" from TELECOM where "Customer Name" like 'sa%';

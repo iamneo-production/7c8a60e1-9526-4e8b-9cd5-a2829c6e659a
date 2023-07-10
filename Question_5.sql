@@ -1,0 +1,1 @@
+select "Customer Name" from TELECOM where ZONE='Mountain';
