@@ -1,6 +1,7 @@
 select count(*) from TELECOM;
 
-select product,count(product) from Telecom group by product;
+select product,count(product) from Telecom 
+om group by product;
 
 select CUSTOMERID from telecom;
 
@@ -12,4 +13,3 @@ select product from telecom order by zone;
 select "Customer Name" from telecom;
  
 
- 
