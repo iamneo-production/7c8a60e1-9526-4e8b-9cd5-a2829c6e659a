@@ -7,4 +7,4 @@ where "Service Segment"='Gold';
 select Product, count(Product) from TELECOM
 group by Product;
 select "Customer Name" from TELECOM 
-where Zone='Mountain';
+where ZONE='Mountain';
