@@ -6,10 +6,5 @@ select CustomerId, "Customer Name" from TELECOM
 where "Service Segment"='Gold';
 select Product, count(Product) from TELECOM
 group by Product;
-<<<<<<< HEAD
 select "customer Name" from TELECOM 
 where ZONE='Mountain';
-=======
-select "CUSTOMER NAME" from TELECOM 
-where ZONE='Mountain';
->>>>>>> origin/main
