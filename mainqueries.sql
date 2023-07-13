@@ -32,3 +32,20 @@ of zone = 'Mountain' ?*/
 
 select "Customer Name" from  TELECOM
 where ZONE='Mountain';
+
+--other queries--
+
+
+/* List the Customer name in each zone */
+
+select "Customer Name",zone from telecom order by zone;
+
+/* Count the Customer's list in each customer class */
+
+select "Customer Class",count("Customer Class") from telecom
+group by "Customer Class";
+
+/* Count the Customers list of each Zone */
+
+select zone ,count(zone) from telecom
+group by zone;
