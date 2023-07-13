@@ -32,5 +32,3 @@ of zone = 'Mountain' ?*/
 
 select "Customer Name" from  TELECOM
 where ZONE='Mountain';
-
-
