@@ -49,3 +49,20 @@ group by "Customer Class";
 
 select zone ,count(zone) from telecom
 group by zone;
+
+/* Display the Digital Subscriber Line product customers' names 
+in descending order */
+
+SELECT "Customer Name"
+FROM TELECOM
+WHERE PRODUCT = 'Digital Subscriber Line'
+ORDER BY "Customer Name" DESC;
+-- Elapsed:  00:00:00:12 --
+--with index--
+create index pro_cus_name on telecom("Customer Name",product);
+
+SELECT "Customer Name"
+FROM TELECOM
+WHERE PRODUCT = 'Digital Subscriber Line'
+ORDER BY "Customer Name" DESC;
+-- Elapsed:  00:00:00:10 --
