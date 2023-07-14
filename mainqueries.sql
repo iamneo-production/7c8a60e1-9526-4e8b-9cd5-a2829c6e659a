@@ -5,7 +5,7 @@ set timing on;
 
  select "Customer Name" from TELECOM
  where PRODUCT='Digital Subscriber Line';
- 
+ set timing off;
 
 /* Write a SQL query to  list a customerid, customer name
  whose name starts with 'sa'? */
