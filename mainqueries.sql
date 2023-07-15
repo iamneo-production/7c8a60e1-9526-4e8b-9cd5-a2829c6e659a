@@ -5,7 +5,14 @@ set timing on;
 
  select "Customer Name" from TELECOM
  where PRODUCT='Digital Subscriber Line';
- set timing off;
+
+-- plan-- 
+
+explain plan for
+select "Customer Name" from TELECOM
+where PRODUCT='Digital Subscriber Line';
+
+select * from table(DBMS_XPLAN.display());
 
 /* Write a SQL query to  list a customerid, customer name
  whose name starts with 'sa'? */
@@ -13,42 +20,67 @@ set timing on;
  select CUSTOMERID,"Customer Name" from TELECOM
  where "Customer Name" like 'sa%';
 
+-- plan --
+
+explain plan for
+select CUSTOMERID,"Customer Name" from TELECOM
+where "Customer Name" like 'sa%';
+
+select * from table(DBMS_XPLAN.display());
 
 /* Write a SQL query to  list the Customer IDs and names 
 belonging to the gold customer segment? */
 
 select CUSTOMERID,"Customer Name" from TELECOM
- where "Service Segment"='Gold';
+where "Service Segment"='Gold';
+ 
+-- plan --
+explain plan for
+select CUSTOMERID,"Customer Name" from TELECOM
+where "Service Segment"='Gold';
 
-  
+select * from table(DBMS_XPLAN.display());
+
+
 /* Write a SQL query to Count the Customer list product-wise?  */
 
- select PRODUCT,count(PRODUCT) from TELECOM
- group by PRODUCT;
+select PRODUCT,count(PRODUCT) from TELECOM
+group by PRODUCT;
+
+-- plan --
+explain plan for 
+select PRODUCT,count(PRODUCT) from TELECOM
+group by PRODUCT;
+
+select * from table(DBMS_XPLAN.display());
 
 
 /*  Write a SQL query to List the Customer name 
 of zone = 'Mountain' ?*/
 
 select "Customer Name" from  TELECOM
-where ZONE='Mountain';
+where ZONE in ('Mountain');
+
+-- plan --
+explain plan for
+select "Customer Name" from  TELECOM
+where ZONE in ('Mountain');
+
+select * from table(DBMS_XPLAN.display());
+
 
 --other queries--
-
-
-/* List the Customer name in each zone */
-
-select "Customer Name",zone from telecom order by zone;
-
-/* Count the Customer's list in each customer class */
-
-select "Customer Class",count("Customer Class") from telecom
-group by "Customer Class";
 
 /* Count the Customers list of each Zone */
 
 select zone ,count(zone) from telecom
 group by zone;
+
+-- plan --
+explain plan for
+select zone ,count(zone) from telecom
+group by zone;
+select * from table(DBMS_XPLAN.display());
 
 /* Display the Digital Subscriber Line product customers' names 
 in descending order */
@@ -57,12 +89,15 @@ SELECT "Customer Name"
 FROM TELECOM
 WHERE PRODUCT = 'Digital Subscriber Line'
 ORDER BY "Customer Name" DESC;
--- Elapsed:  00:00:00:12 --
---with index--
-create index pro_cus_name on telecom("Customer Name",product);
 
+-- plan --
+explain plan for
 SELECT "Customer Name"
 FROM TELECOM
 WHERE PRODUCT = 'Digital Subscriber Line'
 ORDER BY "Customer Name" DESC;
--- Elapsed:  00:00:00:10 --
+select * from table(DBMS_XPLAN.display());
+
+
+
+
