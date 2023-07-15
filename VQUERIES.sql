@@ -18,7 +18,10 @@ where "Service Segment"='Gold';
 select product, count(product) 
 from TELECOM
 group by product;
-
+/*another query for count the customer list product wise*/
+select product, count(*)
+from TELECOM
+group by product;
 
 
 
