@@ -1,0 +1,14 @@
+/*Write a SQL Query to find a list of customer names who are using the product Digital Subscriber Line?*/
+SELECT "Customer Name" from TELECOM where Product='Digital Subscriber Line';
+
+/*Write a SQL Query to list a Customer id,customer name whose name starts with 'sa'?*/
+SELECT CustomerId,"Customer Name" from TELECOM where "Customer Name" like 'sa%';
+
+/*Write a SQL Query to list the customer IDs and names for customers belonging to the gold customer segment?*/
+SELECT CustomerId,"Customer Name" from TELECOM where "Service Segment"='Gold';
+
+/*Write a SQL Query to Count the Customer list product-wise?*/
+SELECT Product,count(Product)from TELECOM group by Product;
+
+/*Write a SQL Query to list the Customer name of zone='Mountain'?*/
+SELECT "Customer Name" from TELECOM where zone='Mountain';
