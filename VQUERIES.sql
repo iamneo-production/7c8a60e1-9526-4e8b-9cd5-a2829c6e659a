@@ -14,7 +14,10 @@ where "Customer Name">='sa' and "Customer Name"<'sb';
 select customerid,"Customer Name"
 from TELECOM
 where "Service Segment"='Gold';
-
+/*count the customer list product wise*/
+select product, count(product) 
+from TELECOM
+group by product;
 
 
 
