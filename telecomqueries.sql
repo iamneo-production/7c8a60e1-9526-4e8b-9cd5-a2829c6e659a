@@ -17,7 +17,7 @@ select "Customer Name" from TELECOM where "ZONE" = 'Mountain';
 
 --Oracle Performance Tuning Generate Explain Plan--
 
---set autotrace on explain statistics;--/* This will give both explain plan and statistics but we need to run
+--set autotrace on explain statistics;/* This will give both explain plan and statistics but we need to run
  as a sys user which is a highly privileged user to run this we will need a DBA permissions*/
 
 describe plan_table;
