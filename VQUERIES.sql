@@ -22,6 +22,12 @@ group by product;
 select product, count(*)
 from TELECOM
 group by product;
+/*query to list the customer names of the zone mountain*/
+select "Customer Name"
+from TELECOM
+where ZONE='Mountain';
+
+
 
 
 
