@@ -6,6 +6,23 @@ set timing on;
  select "Customer Name" from TELECOM
  where PRODUCT='Digital Subscriber Line';
 
+-- plan before index-- 
+
+explain plan for
+select "Customer Name" from TELECOM
+where PRODUCT='Digital Subscriber Line';
+
+select * from table(DBMS_XPLAN.display());
+
+-- index on product column --
+
+create index telecom_product_idx on telecom(PRODUCT);
+
+/* after index created */
+
+select "Customer Name" from TELECOM
+where PRODUCT='Digital Subscriber Line';
+
 -- plan-- 
 
 explain plan for
@@ -14,10 +31,11 @@ where PRODUCT='Digital Subscriber Line';
 
 select * from table(DBMS_XPLAN.display());
 
+
 /* Write a SQL query to  list a customerid, customer name
  whose name starts with 'sa'? */
 
- select CUSTOMERID,"Customer Name" from TELECOM
+select CUSTOMERID,"Customer Name" from TELECOM
  where "Customer Name" like 'sa%';
 
 -- plan --
@@ -25,7 +43,24 @@ select * from table(DBMS_XPLAN.display());
 explain plan for
 select CUSTOMERID,"Customer Name" from TELECOM
 where "Customer Name" like 'sa%';
+ 
+  
+select * from table(DBMS_XPLAN.display());
 
+/* Index on customer Name column */
+
+create index telecom_Customer_name_idx on telecom("Customer Name");
+
+/* after index created */
+
+select CUSTOMERID,"Customer Name" from TELECOM
+where "Customer Name" like 'sa%';
+
+-- plan after index --
+
+explain plan for
+select CUSTOMERID,"Customer Name" from TELECOM
+where "Customer Name" like 'sa%';
 select * from table(DBMS_XPLAN.display());
 
 /* Write a SQL query to  list the Customer IDs and names 
@@ -33,14 +68,27 @@ belonging to the gold customer segment? */
 
 select CUSTOMERID,"Customer Name" from TELECOM
 where "Service Segment"='Gold';
- 
 -- plan --
 explain plan for
 select CUSTOMERID,"Customer Name" from TELECOM
 where "Service Segment"='Gold';
 
+
 select * from table(DBMS_XPLAN.display());
 
+-- index on service segment column --
+
+create index telecom_Service_segment_idx on telecom("Service Segment");
+-- after index --
+
+select CUSTOMERID,"Customer Name" from TELECOM
+where "Service Segment"='Gold';
+
+-- plan after index  --
+explain plan for
+select CUSTOMERID,"Customer Name" from TELECOM
+where "Service Segment"='Gold';
+select * from table(DBMS_XPLAN.display());
 
 /* Write a SQL query to Count the Customer list product-wise?  */
 
