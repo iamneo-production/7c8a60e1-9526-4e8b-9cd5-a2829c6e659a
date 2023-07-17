@@ -24,8 +24,10 @@ from TELECOM
 group by product;
 /*query to list the customer names of the zone mountain*/
 select "Customer Name"
-from TELECOM
+from TELECOM_CUSTOMER
 where ZONE='Mountain';
+
+
 
 
 
