@@ -220,6 +220,9 @@ select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
 where "Service Segment"='Gold';
 
 /* 4) Write a SQL query to Count the Customer list product-wise?  */
+ 
+ -- index on product --
+CREATE BITMAP INDEX telecom_product_idx ON TELECOM_CUSTOMER(PRODUCT);
 
 select PRODUCT,count(PRODUCT) from TELECOM_CUSTOMER
 group by PRODUCT;
