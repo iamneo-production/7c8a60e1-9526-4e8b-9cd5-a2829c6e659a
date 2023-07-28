@@ -135,17 +135,17 @@ group by PRODUCT;
 
 -- plan --
 explain plan for 
-select PRODUCT,count(PRODUCT) from TELECOM_CUSTOMER
+select PRODUCT,count(*) from TELECOM_CUSTOMER
 group by PRODUCT;
 
 select * from table(DBMS_XPLAN.display());
 
 -- index on product --
 
-create index telecom_product_idx on TELECOM_CUSTOMER(product);
+CREATE BITMAP INDEX telecom_product_idx ON TELECOM_CUSTOMER(PRODUCT);
 
--- after index is created --;
-select PRODUCT,count(PRODUCT) from TELECOM_CUSTOMER
+-- after index is created --
+select PRODUCT,count(*) from TELECOM_CUSTOMER
 group by PRODUCT;
 
 -- plan --
