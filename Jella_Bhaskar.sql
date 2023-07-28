@@ -205,8 +205,8 @@ where PRODUCT='Digital Subscriber Line';
 
 create index telecom_Customer_name_idx on TELECOM_CUSTOMER("Customer Name");
 
-select "Customer Name" from TELECOM_CUSTOMER
-where PRODUCT='Digital Subscriber Line';
+select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
+ where "Customer Name" like 'sa%';
 
 
 /* 3)Write a SQL query to  list the Customer IDs and names 
