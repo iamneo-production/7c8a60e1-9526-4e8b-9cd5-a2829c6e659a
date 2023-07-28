@@ -1,4 +1,4 @@
-/* sql queries  before normalization */
+/* sql queries  before optimization */
 
 /* 1)Write a SQL query to find a list of customer names
  who are using  the product Digital Subscriber Line? */
@@ -185,7 +185,7 @@ select * from table(DBMS_XPLAN.display());
 
 
 
-/* ----------- optimized querie -------------- * /
+/* ----------- optimized queries -------------- * /
 
 /* 1)Write a SQL query to find a list of customer names
  who are using  the product Digital Subscriber Line? */
