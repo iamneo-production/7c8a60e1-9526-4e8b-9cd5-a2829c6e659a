@@ -1,4 +1,4 @@
---TELECOM SERVICE PROVIDER--
+-- TELECOM SERVICE PROVIDER --
 --Queries before Optimization--
 
 set timing on; --it is SQL*PLUS command,we can measure run time for Oracle SQL--
