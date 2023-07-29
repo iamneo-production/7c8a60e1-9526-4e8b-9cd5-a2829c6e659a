@@ -34,9 +34,8 @@ SELECT "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE Product= 'Digital Subscriber Line';
 
-select * from table(DBMS_XPLAN.DISPLAY());
-
-
+select PLAN_TABLE_OUTPUT 
+from table(DBMS_XPLAN.DISPLAY());
 
 --query for customerid and customer name whose name starts with 'sa'
 EXPLAIN PLAN FOR
@@ -44,7 +43,8 @@ SELECT customerid, "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE "Customer Name">='sa' AND "Customer Name"<'sb';
 
-select * from table(DBMS_XPLAN.DISPLAY());
+select PLAN_TABLE_OUTPUT 
+from table(DBMS_XPLAN.DISPLAY());
 
 --customerid and customer names beloging to the gold customer segment
 CREATE INDEX IDX_CS ON TELECOM_CUSTOMER(customerid,"Customer Name","Service Segment");
@@ -54,7 +54,8 @@ SELECT customerid, "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE "Service Segment"='gold';
 
-select * from table(DBMS_XPLAN.DISPLAY());
+select PLAN_TABLE_OUTPUT 
+from table(DBMS_XPLAN.DISPLAY());
 
 --query count the customer list product wise
 CREATE INDEX IDX_P ON TELECOM_CUSTOMER(product);
@@ -64,7 +65,8 @@ SELECT PRODUCT,COUNT(PRODUCT)
 FROM TELECOM_CUSTOMER
 GROUP BY PRODUCT;
 
-select * from table(DBMS_XPLAN.DISPLAY());
+select PLAN_TABLE_OUTPUT 
+from table(DBMS_XPLAN.DISPLAY());
 
 --another query for count the customer list product wise
 EXPLAIN PLAN FOR
@@ -72,7 +74,8 @@ SELECT PRODUCT,COUNT(*)
 FROM TELECOM_CUSTOMER
 GROUP BY PRODUCT;
 
-select * from table(DBMS_XPLAN.DISPLAY());
+select PLAN_TABLE_OUTPUT 
+from table(DBMS_XPLAN.DISPLAY());
 
 --query to list the customer names of the zone mountain
 CREATE INDEX IDX_Z ON TELECOM_CUSTOMER("Customer Name",ZONE);
@@ -82,7 +85,8 @@ SELECT "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE ZONE='Mountain';
 
-select * from table(DBMS_XPLAN.DISPLAY());
+select PLAN_TABLE_OUTPUT 
+from table(DBMS_XPLAN.DISPLAY());
 
 
 
