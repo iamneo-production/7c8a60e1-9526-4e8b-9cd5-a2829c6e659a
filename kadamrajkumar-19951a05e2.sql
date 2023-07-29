@@ -90,28 +90,28 @@ describe plan_table;
  who are using the product Digital Subscriber Line?*/
 explain plan for select "Customer Name" from TELECOM_CUSTOMER 
 where product = 'Digital Subscriber Line';
-select * from table(dbms_xplan.display());
+select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 
 /* 2.Write a SQL Query to list a Customer id,customer name 
 whose name starts with 'sa'?*/
 explain plan for select customerid,"Customer Name" from TELECOM_CUSTOMER 
 where "Customer Name" like 'sa%';
-select * from table(dbms_xplan.display());
+select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 
 /* 3.Write a SQL Query to list the customer IDs and names 
 for customers belonging to the gold customer segment?*/
 explain plan for select customerid,"Customer Name" from TELECOM_CUSTOMER 
 where "Service Segment" = 'Gold';
-select * from table(dbms_xplan.display());
+select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 
 /* 4.Write a SQL Query to Count the 
 Customer list product-wise?*/
 explain plan for select product,count(product) from TELECOM_CUSTOMER 
 group by product;
-select * from table(dbms_xplan.display());
+select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 
 /* 5.Write a SQL Queryto list the Customer name
  of zone 'Mountain'?*/
 explain plan for select "Customer Name" from TELECOM_CUSTOMER 
 where "ZONE" = 'Mountain';
-select * from table(dbms_xplan.display());
+select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
