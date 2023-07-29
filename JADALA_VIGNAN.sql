@@ -56,7 +56,7 @@ WHERE "Service Segment"='gold';
 
 select * from table(DBMS_XPLAN.DISPLAY());
 
---count the customer list product wise
+--query count the customer list product wise
 CREATE INDEX IDX_P ON TELECOM_CUSTOMER(product);
 
 EXPLAIN PLAN FOR
