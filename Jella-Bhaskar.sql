@@ -237,7 +237,6 @@ create index telecom_customer_name_zone_idx on telecom_customer("Customer Name",
 select "Customer Name" from  TELECOM_CUSTOMER
 where ZONE in ('Mountain');
 
-/*  */
 
 
 
