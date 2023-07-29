@@ -1,4 +1,4 @@
-/* sql queries  before optimization */
+-- sql queries  before optimization --
 
 /* 1)Write a SQL query to find a list of customer names
  who are using  the product Digital Subscriber Line? */
@@ -33,7 +33,7 @@ select "Customer Name" from  TELECOM_CUSTOMER
 where ZONE in ('Mountain');
 
 
-/* -------- optimization of queries ------------*/
+-------- optimization of queries ------------
 
 set timing on;
 /* 1)Write a SQL query to find a list of customer names
@@ -67,8 +67,7 @@ select "Customer Name" from TELECOM_CUSTOMER
 where PRODUCT='Digital Subscriber Line';
 
 select * from table(DBMS_XPLAN.display());
-/* cost has been decreased by creating 
-telecom_Customer_name_product_idx index */
+-- cost has been decreased by creating  telecom_Customer_name_product_idx index --
 
 /* 2)Write a SQL query to  list a customerid, customer name
  whose name starts with 'sa'? */
@@ -131,8 +130,8 @@ select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
 where "Service Segment"='Gold';
 select * from table(DBMS_XPLAN.display());
 
-/* cost has been reduced by creating  index 
-telecom_customerid_servicesegment_idx*/
+-- cost has been reduced by creating  index  telecom_customerid_servicesegment_idx --
+
 -- 4) Write a SQL query to Count the Customer list product-wise?  --
 
 select PRODUCT,count(PRODUCT) from TELECOM_CUSTOMER
@@ -186,12 +185,11 @@ where ZONE in ('Mountain');
 
 select * from table(DBMS_XPLAN.display());
 
-/*cost(%cpu) has been reduced by creating 
-telecom_customer_name_zone_idx index */
+-- cost(%cpu) has been reduced by creating telecom_customer_name_zone_idx index ---
 
 
 
-/* ----------- optimized queries -------------- * /
+ ----------- optimized queries -------------- 
 
 /* 1)Write a SQL query to find a list of customer names
  who are using  the product Digital Subscriber Line? */
@@ -207,7 +205,7 @@ where PRODUCT='Digital Subscriber Line';
 /* 2)Write a SQL query to  list a customerid, customer name
  whose name starts with 'sa'? */
 
- /* Index on customer Name column */
+ -- Index on customer Name column --
 
 create index telecom_Customer_name_idx on TELECOM_CUSTOMER("Customer Name");
 
@@ -243,7 +241,6 @@ create index telecom_customer_name_zone_idx on telecom_customer("Customer Name",
  
 select "Customer Name" from  TELECOM_CUSTOMER
 where ZONE in ('Mountain');
-/*/
 
 
 
