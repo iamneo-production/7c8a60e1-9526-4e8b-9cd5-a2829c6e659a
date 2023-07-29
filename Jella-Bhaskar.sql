@@ -20,7 +20,8 @@ belonging to the gold customer segment? */
 select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
 where "Service Segment"='Gold';
 
-/* 4) Write a SQL query to Count the Customer list product-wise?  */
+/* 4) Write a SQL query to Count the Customer list 
+product-wise?  */
 
 select PRODUCT,count(PRODUCT) from TELECOM_CUSTOMER
 group by PRODUCT;
@@ -53,7 +54,8 @@ select * from table(DBMS_XPLAN.display());
 
 create index telecom_Customer_name_product_idx on TELECOM_CUSTOMER("Customer Name",product);
  
-/* after index created */
+/* after 
+index created */
 
 select "Customer Name" from TELECOM_CUSTOMER
 where PRODUCT='Digital Subscriber Line';
@@ -65,7 +67,8 @@ select "Customer Name" from TELECOM_CUSTOMER
 where PRODUCT='Digital Subscriber Line';
 
 select * from table(DBMS_XPLAN.display());
-/* cost has been decreased by creating telecom_Customer_name_product_idx index */
+/* cost has been decreased by creating 
+telecom_Customer_name_product_idx index */
 
 /* 2)Write a SQL query to  list a customerid, customer name
  whose name starts with 'sa'? */
@@ -82,11 +85,12 @@ where "Customer Name" like 'sa%';
   
 select * from table(DBMS_XPLAN.display());
 
-/* Index on customer Name column */
+/* Index on 
+customer Name column */
 
 create index telecom_Customer_name_idx on TELECOM_CUSTOMER("Customer Name");
 
-/* after index created */
+-- after index created --
 
 select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
 where "Customer Name" like 'sa%';
@@ -97,7 +101,7 @@ explain plan for
 select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
 where "Customer Name" like 'sa%';
 select * from table(DBMS_XPLAN.display());
-/* here cost has decreased by creating telecom_Customer_name_idx */
+-- here cost has decreased by creating telecom_Customer_name_idx --
 
 
 /* 3)Write a SQL query to  list the Customer IDs and names 
@@ -127,8 +131,9 @@ select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
 where "Service Segment"='Gold';
 select * from table(DBMS_XPLAN.display());
 
-/* cost has been reduced by creating  index telecom_customerid_servicesegment_idx*/
-/* 4) Write a SQL query to Count the Customer list product-wise?  */
+/* cost has been reduced by creating  index 
+telecom_customerid_servicesegment_idx*/
+-- 4) Write a SQL query to Count the Customer list product-wise?  --
 
 select PRODUCT,count(PRODUCT) from TELECOM_CUSTOMER
 group by PRODUCT;
@@ -181,7 +186,8 @@ where ZONE in ('Mountain');
 
 select * from table(DBMS_XPLAN.display());
 
-/*cost(%cpu) has been reduced by creating telecom_customer_name_zone_idx index */
+/*cost(%cpu) has been reduced by creating 
+telecom_customer_name_zone_idx index */
 
 
 
@@ -219,7 +225,8 @@ create index telecom_customerid_servicesegment_idx on TELECOM_CUSTOMER("Service 
 select CUSTOMERID,"Customer Name" from TELECOM_CUSTOMER
 where "Service Segment"='Gold';
 
-/* 4) Write a SQL query to Count the Customer list product-wise?  */
+/* 4) Write a SQL query to Count the 
+Customer list product-wise?  */
  
  -- index on product --
 CREATE BITMAP INDEX telecom_product_idx ON TELECOM_CUSTOMER(PRODUCT);
