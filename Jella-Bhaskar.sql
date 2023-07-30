@@ -95,6 +95,6 @@ select "Customer Name" from  TELECOM_CUSTOMER
 where ZONE in ('Mountain');
 
 --- cost(%cpu) has been reduced by creating  telecom_customer_name_zone_idx index  ---
-
+--------------------------------------------------
 
 
