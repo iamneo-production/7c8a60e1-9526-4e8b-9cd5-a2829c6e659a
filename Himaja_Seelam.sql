@@ -1,4 +1,4 @@
-/* TELECOM SERVICE PROVIDER PROJECT */
+-- TELECOM SERVICE PROVIDER PROJECT --
 -- QUERIES BEFORE OPTIMIZATION --
 
 set timing on; -- Displays the elapsed time --
@@ -24,7 +24,7 @@ but the attribute gold is in service segment so we have done in this way */
 select CustomerId,"Customer Name" from TELECOM_CUSTOMER
 where "Service Segment"='Gold';
  
-/* 4)Write a SQL query to Count the Customer list product-wise?  */
+-- 4)Write a SQL query to Count the Customer list product-wise? --
 
 select Product,count(Product) from TELECOM_CUSTOMER 
 group by Product;
