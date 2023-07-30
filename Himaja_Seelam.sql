@@ -97,7 +97,7 @@ of zone = 'Mountain' ?*/
 
 -- Index creation on zone & customer Name--
 
-create index Telecom_Customer_Name_Zone_idx on TELECOM_CUSTOMER("Customer Name","ZONE");
+create index telecom_customer_name_zone_idx on TELECOM_CUSTOMER("Customer Name","ZONE");
  
 select "Customer Name" from TELECOM_CUSTOMER
 where "ZONE" ='Mountain';
