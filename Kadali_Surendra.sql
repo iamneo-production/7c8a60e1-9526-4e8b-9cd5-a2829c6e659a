@@ -40,7 +40,7 @@ WHERE ZONE = 'Mountain';
 
 
 
-/*Optional queries*/
+--Optional queries
 
 --6.List the customers in each CUSTOMER_CLASS along with the count of customers in each class
 
