@@ -5,7 +5,7 @@ The table contains the following fields
 CUSTOMER_ID,PRODUCT, CUSTOMER_NAME,CUSTOMER_SEGMENT,SERVICE_SEGM ENT,CUSTOMER_CLASS, CIRCLE,ZONE*/
 
 
-/*1.Write a SQL Query to find a list of customer names who are using the product Digital Subscriber Line?*/
+--1.Write a SQL Query to find a list of customer names who are using the product Digital Subscriber Line?
 SELECT "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE PRODUCT = 'Digital Subscriber Line';
@@ -40,7 +40,7 @@ WHERE ZONE = 'Mountain';
 
 
 
-/*Optional queries */
+/*Optional queries*/
 
 --6.List the customers in each CUSTOMER_CLASS along with the count of customers in each class
 
