@@ -61,55 +61,6 @@ FROM TELECOM_CUSTOMER
 WHERE ZONE='Mountain';
 
 
---plan explaination
-DESCRIBE PLAN_TABLE;
-
---query for customer names who are using product digital subscriber line
-EXPLAIN PLAN FOR
-SELECT "Customer Name" 
-FROM TELECOM_CUSTOMER
-WHERE Product= 'Digital Subscriber Line';
-
-select PLAN_TABLE_OUTPUT 
-from table(DBMS_XPLAN.DISPLAY());
-
---query for customerid and customer name whose name starts with 'sa'
-EXPLAIN PLAN FOR
-SELECT customerid, "Customer Name"
-FROM TELECOM_CUSTOMER
-WHERE "Customer Name">='sa' AND "Customer Name"<'sb';
-
-select PLAN_TABLE_OUTPUT 
-from table(DBMS_XPLAN.DISPLAY());
-
---customerid and customer names beloging to the gold customer segment
-EXPLAIN PLAN FOR
-SELECT customerid, "Customer Name"
-FROM TELECOM_CUSTOMER
-WHERE "Service Segment"='gold';
-
-select PLAN_TABLE_OUTPUT 
-from table(DBMS_XPLAN.DISPLAY());
-
---query for count the customer list product wise
-EXPLAIN PLAN FOR
-SELECT PRODUCT,COUNT(*)
-FROM TELECOM_CUSTOMER
-GROUP BY PRODUCT;
-
-select PLAN_TABLE_OUTPUT 
-from table(DBMS_XPLAN.DISPLAY());
-
---query to list the customer names of the zone mountain
-EXPLAIN PLAN FOR
-SELECT "Customer Name"
-FROM TELECOM_CUSTOMER
-WHERE ZONE='Mountain';
-
-select PLAN_TABLE_OUTPUT 
-from table(DBMS_XPLAN.DISPLAY());
-
-
 
 
 
