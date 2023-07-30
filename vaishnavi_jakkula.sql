@@ -1,5 +1,4 @@
 
-
 /* 1)Write a SQL query to find a list of customer names
  who are using  the product Digital Subscriber Line? */
 
