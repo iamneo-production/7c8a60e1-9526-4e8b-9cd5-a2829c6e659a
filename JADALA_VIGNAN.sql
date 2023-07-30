@@ -60,6 +60,7 @@ SELECT "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE ZONE='Mountain';
 
+
 --plan explaination
 DESCRIBE PLAN_TABLE;
 
