@@ -33,7 +33,7 @@ group by Product;
 of zone = 'Mountain' ?*/
 
 select "Customer Name" from TELECOM_CUSTOMER
-where Zone='Mountain';
+where "ZONE" ='Mountain';
 
 
 -- OPTIMIZED QUERIES -- 
@@ -97,9 +97,9 @@ of zone = 'Mountain' ?*/
 
 -- Index creation on zone & customer Name--
 
-create index Telecom_Customer_Name_Zone_idx on TELECOM_CUSTOMER("Customer Name",zone);
+create index Telecom_Customer_Name_Zone_idx on TELECOM_CUSTOMER("Customer Name","zone");
  
 select "Customer Name" from TELECOM_CUSTOMER
-where Zone ='Mountain';
+where "ZONE" ='Mountain';
 
--- Cost(%cpu) of the query has been reduced by creating telecom_customer_name_zone_idx index --
+-- Cost of the query has been reduced by creating telecom_customer_name_zone_idx index --
