@@ -6,7 +6,7 @@ set timing on; --it is SQL*PLUS command,we can measure run time for Oracle SQL--
 /* 1.Write a SQL Query to find a list of customer names 
 who are using the product Digital Subscriber Line?*/
 select "Customer Name" from TELECOM_CUSTOMER 
-where product = 'Digital Subscriber Line';
+where product='Digital Subscriber Line';
 
 /* 2.Write a SQL Query to list a Customer id,customer name 
 whose name starts with 'sa'?*/
@@ -16,7 +16,7 @@ where "Customer Name" like 'sa%';
 /* 3.Write a SQL Query to list the customer IDs and names 
 for customers belonging to the gold customer segment?*/
 select customerid,"Customer Name" from TELECOM_CUSTOMER 
-where "Service Segment" = 'Gold';
+where "Service Segment"='Gold';
 
 /* 4.Write a SQL Query to Count the 
 Customer list product-wise?*/
@@ -26,7 +26,7 @@ group by product;
 /* 5.Write a SQL Queryto list the Customer name
  of zone 'Mountain'?*/
 select "Customer Name" from TELECOM_CUSTOMER 
-where "ZONE" = 'Mountain';
+where "ZONE"='Mountain';
 
 --Queries after Optimization by using indexing--
 --Indexing makes columns faster to query by creating pointers to where data is stored within a database--
@@ -89,7 +89,7 @@ describe plan_table;
 /* 1.Write a SQL plan Query to find a list of customer names
  who are using the product Digital Subscriber Line?*/
 explain plan for select "Customer Name" from TELECOM_CUSTOMER 
-where product = 'Digital Subscriber Line';
+where product='Digital Subscriber Line';
 select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 
 /* 2.Write a SQL Query to list a Customer id,customer name 
@@ -101,7 +101,7 @@ select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 /* 3.Write a SQL Query to list the customer IDs and names 
 for customers belonging to the gold customer segment?*/
 explain plan for select customerid,"Customer Name" from TELECOM_CUSTOMER 
-where "Service Segment" = 'Gold';
+where "Service Segment"='Gold';
 select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 
 /* 4.Write a SQL Query to Count the 
@@ -113,5 +113,5 @@ select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
 /* 5.Write a SQL Queryto list the Customer name
  of zone 'Mountain'?*/
 explain plan for select "Customer Name" from TELECOM_CUSTOMER 
-where "ZONE" = 'Mountain';
+where "ZONE"='Mountain';
 select PLAN_TABLE_OUTPUT from table(dbms_xplan.display());
