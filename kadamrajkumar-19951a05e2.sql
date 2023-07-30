@@ -5,7 +5,7 @@ set timing on; --it is SQL*PLUS command,we can measure run time for Oracle SQL--
 
 /* 1.Write a SQL Query to find a list of customer names 
 who are using the product Digital Subscriber Line?
-/*select "Customer Name" from TELECOM_CUSTOMER 
+select "Customer Name" from TELECOM_CUSTOMER 
 where product='Digital Subscriber Line';*/
 
 /* 2.Write a SQL Query to list a Customer id,customer name 
