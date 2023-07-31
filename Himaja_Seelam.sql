@@ -103,3 +103,4 @@ select "Customer Name" from TELECOM_CUSTOMER
 where "ZONE" ='Mountain';
 
 -- Cost of the query has been reduced by creating telecom_customer_name_zone_idx index --
+---
