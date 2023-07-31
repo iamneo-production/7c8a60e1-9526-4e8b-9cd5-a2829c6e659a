@@ -78,6 +78,8 @@ create index telecom_customer_name_zone_idx on TELECOM_CUSTOMER("Customer Name",
 select "Customer Name" from  TELECOM_CUSTOMER
 where "ZONE"='Mountain';
 
+-- cost of cpu% has been reduced by creating indexes--
+
 --Oracle Performance Tuning Generating plan explanation with Index creation--
 
 --set autotrace on explain statistics;--

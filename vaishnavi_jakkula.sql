@@ -1,4 +1,3 @@
-
 set timing on;
 
 ---Query1---
@@ -58,4 +57,3 @@ create index telecom_customer_name_zone_idx on TELECOM_CUSTOMER("Customer Name",
 select "Customer Name"
 from TELECOM_CUSTOMER
 where ZONE in ('Mountain');
- 
