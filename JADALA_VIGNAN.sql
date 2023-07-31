@@ -23,6 +23,8 @@ select "Customer Name"
 from TELECOM_CUSTOMER
 where ZONE='Mountain';
 
+
+
 --optimization of queries using indexing
 
 --query for customer names who are using product digital subscriber line
