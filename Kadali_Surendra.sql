@@ -3,9 +3,8 @@ The table contains the following fields
 CUSTOMER_ID,PRODUCT, CUSTOMER_NAME,CUSTOMER_SEGMENT,SERVICE_SEGM ENT,CUSTOMER_CLASS, CIRCLE,ZONE*/
 
 
-<<<<<<< HEAD
+
 --1.Write a SQL Query to find a list of customer names who are using the product Digital Subscriber Line?
-=======
 
 set timing on;
 
@@ -14,7 +13,7 @@ set timing on;
 --1.Write a SQL Query to find a list of customer names who are using the product Digital Subscriber Line?--
 
 --create index name_product_indx on TELECOM_CUSTOMER("Customer Name",product);
->>>>>>> b4298bf7b5fcec16b6e8c5c0a4abd72fd20c2728
+
 SELECT "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE PRODUCT = 'Digital Subscriber Line';
@@ -57,14 +56,14 @@ WHERE ZONE = 'Mountain';
 
 
 
-<<<<<<< HEAD
+
 --Optional queries
-=======
+
 
 -- Optional queries
 
 
->>>>>>> b4298bf7b5fcec16b6e8c5c0a4abd72fd20c2728
+
 
 --6.List the customers in each CUSTOMER_CLASS along with the count of customers in each class
 
