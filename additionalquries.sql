@@ -30,7 +30,7 @@ select product,count(product) as no_of_customer from telecom_customer group by p
 
 --9. Display the total customer name in ascending order?
 
-select "Customer Name" from Telecom_customer order by "Customer Name";
+select "Customer Name" from Telecom_customer order by "Customer Name" ASC;
 
 --10. Display the Customer name in U.S Zone
 
