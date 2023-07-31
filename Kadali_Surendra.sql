@@ -1,17 +1,25 @@
 /*Table name: TELECOM_CUSTOMER
-
 The table contains the following fields
-
 CUSTOMER_ID,PRODUCT, CUSTOMER_NAME,CUSTOMER_SEGMENT,SERVICE_SEGM ENT,CUSTOMER_CLASS, CIRCLE,ZONE*/
 
 
-/*1.Write a SQL Query to find a list of customer names who are using the product Digital Subscriber Line?*/
+
+set timing on;
+
+--As already indexing was done on respective coloumns, I am commenting the indexing code lines.
+
+--1.Write a SQL Query to find a list of customer names who are using the product Digital Subscriber Line?--
+
+--create index name_product_indx on TELECOM_CUSTOMER("Customer Name",product);
 SELECT "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE PRODUCT = 'Digital Subscriber Line';
 
 
+
 --2. Write a SQL Query to list a Customer id, customer name whose name starts with 'sa'?
+
+--create index Customer_name_indx on TELECOM_CUSTOMER("Customer Name");
 SELECT CUSTOMERID, "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE "Customer Name" LIKE 'sa%';
@@ -20,27 +28,35 @@ WHERE "Customer Name" LIKE 'sa%';
 
 --3. Write a SQL Query to list the customer IDs and names for customers belonging to the gold customer segment?
 
+--CREATE INDEX meg_indx ON TELECOM_CUSTOMER(customerid,"Customer Name","Service Segment");
 SELECT CUSTOMERID, "Customer Name"
 FROM TELECOM_CUSTOMER
-WHERE "Customer Segment" = 'Gold';
-
+WHERE "Service Segment" = 'Gold';
 
 
 
 --4. Write a SQL Query to Count the Customer list product-wise?
+
+--CREATE INDEX product_indx ON TELECOM_CUSTOMER(PRODUCT);
 SELECT PRODUCT, COUNT(*) AS Customer_Count
 FROM TELECOM_CUSTOMER
 GROUP BY PRODUCT;
 
 
+
 --5.Write a SQL Query to List the Customer name of zone 'Mountain'?
+
+--create index customer_name_zone_indx on telecom_customer("Customer Name",zone);
 SELECT "Customer Name"
 FROM TELECOM_CUSTOMER
 WHERE ZONE = 'Mountain';
 
 
 
-/*Optional queries */
+
+-- Optional queries
+
+
 
 --6.List the customers in each CUSTOMER_CLASS along with the count of customers in each class
 
