@@ -1,5 +1,5 @@
 -- question1
-select * from TELECOM where PRODUCT='Digital Subscriber Line';
+select "Customer Name" from TELECOM where PRODUCT='Digital Subscriber Line';
 --question2
 select CUSTOMERID,"Customer Name" from TELECOM where "Customer Name" like 'sa%';
 --question3
